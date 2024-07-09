@@ -1,13 +1,39 @@
 <div class="author">
-    <h1 class="author__heading">Hello, I'm author</h1>
-    <p class="author__body">I write poor reviews of things</p>
-</div>
-
-<img src="img/apple.jpeg" alt="apple">
-
-
-<section class="articles">
+    <h1 class="author__heading">Hi, I'm Benjamin</h1>
+    <p class="author__body">Stupid dumb dumb</p>
+  </div>
+  
+  <img src="/img/codingtree2.png" alt="working at desk" />
+  
+  <section class="articles">
     <h2 class="articles__heading">Latest Posts</h2>
+  
+    <ul class="article-ul">
+      <% data.forEach(post => { %>
+      <li>
+        <a href="/post/<%= post._id %>">
+          <span><%-post.title %></span>
+          <span class="article-list__date"
+            ><%-post.createdAt.toDateString() %></span
+          >
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+  
+    <% if(nextPage !== null) { %>
 
-    <ul class="article-ul">+</ul>
-</section>
+      <a href="/?page=<%= nextPage%>" class="pagination">
+        &lt; View Older
+      </a>
+
+    <% } %>
+
+    <% if(prevPage >= 1){ %> <% if (prevPage === 1) {%>
+    <a href="/" class="pagination-newpage">View Newer Post &gt;</a>
+    <% } else { %>
+      <a href="/?page=<%= prevPage %>" class="pagination-newpage">
+        View Newer Posts &gt;
+      </a>
+      <% } %> <% } %>
+  </section>

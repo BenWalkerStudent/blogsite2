@@ -15,4 +15,21 @@ const connectDB = async ()=> {
 
 }
 
+// const Post = require("../models/Post")
+
+// function insertPostData() {
+
+//     Post.insertMany([
+//         {
+
+//             title: "zebra review",
+//             body: `zebras are cool`
+
+//     }
+//     ])
+
+// }
+
+// insertPostData()
+
 module.exports = connectDB

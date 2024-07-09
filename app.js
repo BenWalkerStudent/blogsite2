@@ -10,17 +10,18 @@ connectDB();
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
+app.use(express.static('public'));
 
 app.use(expressLayouts)
 app.use(express.static("public"))
-app.set("layout", "./layouts/main")
+app.set("layout", "./layouts/main.ejs")
 app.set("view engine", "ejs")
 
 app.use("/", require("./server/routes/main"))
 
 app.get('/',(req,res)=>{
 
-    res.send('hello world!')
+    res.render('main')
     
 });
 

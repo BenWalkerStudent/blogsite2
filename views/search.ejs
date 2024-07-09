@@ -1,18 +1,19 @@
-<header>
-    <a href="/" class="header__logo">NodeJS</a>
-    <nav class="header__nav">
-        <ul>
-            <li>
-                <a href="/" class="">Home</a>
-            </li>
-            <li>
-                <a href="/about" class="">About</a>
-            </li>
-            <li>
-                <a href="/contact" class="">Contact</a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="header__button"></div>
-</header>
+<div class="author">
+    <h1 class="author__heading">Search Results</h1>
+  </div>
+  
+  <section class="articles">
+    <ul class="article-ul">
+      <% data.forEach(post => { %>
+      <li>
+        <a href="/post/<%= post._id %>">
+          <span><%= post.title %></span>
+          <span class="article-list__date"
+            ><%= post.createdAt.toDateString() %></span
+          >
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+  </section>
+  
